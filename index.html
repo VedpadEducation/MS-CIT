@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8" />
+  <title>वेदपॅड एज्युकेशन — MS‑CIT सराव परीक्षा</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f2f2f2;
+    }
+
+    header {
+      background: white;
+      color: black;
+      padding: 30px;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      height: 105px;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .site-title {
+      font-size: 32px;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+    }
+
+    .malganga-red {
+      color: #f9053b;
+      font-weight: 800;
+      font-size: 100px;
+      text-shadow: 1px 1px 2px #270108;
+    }
+
+    .computer-blue {
+      color: #4e73df;
+      font-weight: 600;
+      margin-left: 5px;
+      position: relative;
+      top: 6px;
+      font-size: 60px;
+      padding-right: 25px;
+      padding-left: 10px;
+      border-radius: 20px;
+    }
+
+    .container {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 850px;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    h2 {
+      font-size: 60px;
+	  text-align: center;
+	  color: #F28C28;
+    }
+
+    .quiz-form h3 {
+      font-size: 31px;
+    }
+
+    .quiz-form label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .quiz-form input[type="text"],
+    .quiz-form input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-top: 5px;
+      font-size: 23px;
+    }
+
+    .quiz-form input[type="submit"] {
+      margin-top: 20px;
+      padding: 16px 26px;
+      border: none;
+      background-color: #4ca1af;
+      color: white;
+      font-size: 25px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .result {
+      background-color: #e0ffe0;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: 1px solid green;
+      font-size: 20px;
+    }
+
+    .question {
+      margin-top: 30px;
+    }
+
+    .question label {
+      font-size: 29px;
+    }
+
+    .options label {
+      font-size: 25px;
+    }
+
+    .zoom-img {
+      width: 140px !important;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 1s ease;
+      cursor: zoom-in;
+    }
+
+    .zoom-img:hover {
+      transform: scale(1.8);
+      z-index: 100;
+      position: relative;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      font-size: 20px;
+    }
+	.welcome-message {
+  font-size: 25px;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+    .footer-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-left ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-left ul li {
+      margin-bottom: 5px;
+    }
+
+    .footer-left h3, .footer-right p {
+      margin: 10px 0;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 20px;
+      }
+
+      .logo-title {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .site-title {
+        font-size: 22px;
+        text-align: center;
+      }
+
+      nav a {
+        padding: 8px 12px;
+        font-size: 14px;
+      }
+
+      .container {
+        padding: 10px;
+      }
+
+      .card {
+        padding: 25px;
+      }
+
+      .card img {
+        max-height: 500px;
+        object-fit: cover;
+      }
+
+      h2 {
+        font-size: 31px;
+      }
+
+      .quiz-form h3 {
+        font-size: 29px;
+      }
+
+      .question label {
+        font-size: 27px;
+      }
+
+      .options label {
+        font-size: 23px;
+      }
+
+      .zoom-img {
+        width: 130px !important;
+      }
+
+      .quiz-form input[type="text"],
+      .quiz-form input[type="email"] {
+        font-size: 22px;
+      }
+
+      .quiz-form input[type="submit"] {
+        font-size: 23px;
+        padding: 14px 22px;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo-title">
+        <img src="VEDPAD PNG.png" alt="Logo" class="logo">
+        <h1 class="site-title">
+          <span class="malganga-red">वेदपॅड</span><span class="computer-blue">एज्युकेशन</span>
+        </h1>
+      </div>
+      <nav>
+        <a href="#">Courses</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <img src="banner.2.jpg" alt="Banner Image">
+      <h2>नमस्कार.!</h2>
+      <p class="welcome-message">🙏 वेदपॅड एज्युकेशन मध्ये आपले मनःपूर्वक स्वागत आहे! 🎓
+ही 🖥️ MS‑CIT सराव परीक्षा विद्यार्थ्यांचे मूलभूत ज्ञान 📘, तांत्रिक समज 🧠 आणि अचूकता ✅ तपासण्यासाठी विशेषतः डिझाइन करण्यात आली आहे.
+या सरावाच्या माध्यमातून आपण आपल्या तयारीचे स्वतः मूल्यांकन करू शकता 📊 आणि आगामी परीक्षेसाठी अधिक आत्मविश्वासाने तयारी करू शकता 💪📈..</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card quiz-form">
+      <form id="quizForm">
+        <div class="info-card">
+          <h3>विद्यार्थ्याची माहिती भरा</h3>
+          <label>विद्यार्थाचे नाव:
+            <input type="text" id="studentName" required>
+          </label>
+          <label>विद्यार्थाचा/ पालकांचा Email Id:
+            <input type="email" id="studentEmail" required>
+          </label>
+        </div>
+        <div id="quiz"></div>
+        <input type="submit" value="SUBMIT">
+        <div id="result" class="result" style="display:none;"></div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <h3>आमचे कोर्सेस</h3>
+        <ul>
+          <li>Tally Prime</li>
+          <li>Advanced Excel</li>
+          <li>C, C++</li>
+          <li>Python</li>
+          <li>HTML, CSS, JavaScript</li>
+        </ul>
+      </div>
+      <div class="footer-right">
+        <p>© 2025 वेदपॅड एज्युकेशन</p>
+        <p>संपर्क: info.vedpad@gmail.com</p>
+        <p>पत्ता: वेदपॅड एज्युकेशन, १ ला मजला स्काय टावर,सी-टी बोरा कॉलेज रोड,शिरूर.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("onXxIGIxFerE3aA1X");
+
+    const questions = [
+      {
+        question: "इमेल वापरणाऱ्यांपैकी प्रत्येकाचा इमेल ऐड्रेस हा ........... असतो?",
+        options: [
+          { type: "text", content: "वेगळा" },
+          { type: "text", content: "सारखा" },
+          { type: "text", content: "सर्वांसाठी मिळून एक" },
+          { type: "text", content: "यापैकी कुठलाहीपर्याय नाही" }
+        ],
+        answer: 0
+      },
+	  {
+        question: "ही ऑपरेटिंग सिस्टिमची एका वेळेला एकापेक्षा अधिक ऍप्लिकेशन्स चालविण्याची ऑपरेटिंग सिस्टिमची क्षमता आहे?",
+        options: [
+          { type: "text", content: "बूटिंग" },
+          { type: "text", content: "कॉपिंग" },
+          { type: "text", content: "पेस्टिंग" },
+          { type: "text", content: "मल्टिटास्किंग" }
+        ],
+        answer: 3
+      },
+	  {
+        question: "रँडम एक्सेस मेमरी ही मेमरी ---- आहे?",
+        options: [
+          { type: "text", content: "स्थायी (कायम स्वरुपी)" },
+          { type: "text", content: "अस्थायी (काही काळासाठी)" },
+          { type: "text", content: "फ्लॅश" },
+          { type: "text", content: "स्मार्ट" }
+        ],
+        answer: 1
+      },
+	  {
+	  question: "ही युजर इंटरफेस पुरविते, कॉम्प्यूटरचे स्त्रोत नियंत्रित करते आणि प्रोग्राम्स चालवीते?",
+        options: [
+          { type: "text", content: "ड्रायव्हर्स" },
+          { type: "text", content: "डेस्कटॉप" },
+          { type: "text", content: "ऑपरेटिंग सिस्टिम्स" },
+          { type: "text", content: "ह्यापैकी कोणतेच नाही" }
+        ],
+        answer: 2
+      },
+	  {
+	  question: "सेकंडरी स्टोअरेज हे नॉन व्होलेटाईल असते.?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 0
+      },
+	  {
+	  question: "कमी प्रकाशाच्या वातावरणात उपयुक्त असलेल्या वेबकॅमवर कोणते लाइट असतात?",
+        options: [
+          { type: "text", content: "एलईडी लाइट" },
+          { type: "text", content: "नैसर्गिक लाइट" },
+          { type: "text", content: "एचडी लाइट" },
+          { type: "text", content: "स्पॉट लाइट" }
+        ],
+        answer: 0
+      },
+	  {
+	  question: "कॉम्प्यूटर सुरु किंवा पुनः सुरु करण्याला सिस्टिमचे ....... करणे म्हणतात.?",
+        options: [
+          { type: "text", content: "बूटिंग" },
+          { type: "text", content: "कॉपिंग" },
+          { type: "text", content: "पेस्टिंग" },
+          { type: "text", content: "मल्टिटास्किंग" }
+        ],
+        answer: 0
+      },
+	  {
+	  question: "कॉम्प्युटरमधील सर्वसामान्य कीबोर्डचे मूलभूत कार्य म्हणजे पियानोप्रमाणे संगीत वाजवि?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 1
+      },
+	  {
+	  question: "कि-बोर्ड, माऊस, मॉनिटर व सिस्टिम युनिट यांना एकत्रितपणे--- असेही म्हणता येईल?",
+        options: [
+          { type: "text", content: "सॉलिडवेअर" },
+          { type: "text", content: "सॉफ्टवेअर" },
+          { type: "text", content: "हार्डवेअर" },
+          { type: "text", content: "फर्मवेअर" }
+        ],
+        answer: 2
+      },
+	  {
+	  question: "लोकप्रिय अशा चॅट सर्व्हिसला..........म्हणतात?",
+        options: [
+          { type: "text", content: "इंटरनेट रिलीज चॅट" },
+          { type: "text", content: "इंटरनेट रिक्वेस्ट चॅट" },
+          { type: "text", content: "इंटरनेट रिसोर्स चॅट" },
+          { type: "text", content: "इंटरनेट रिले चैट" }
+        ],
+        answer: 3
+      },
+	  {
+	  question: "डेस्कटॉप कॉम्प्यूटरचे लॅपटॉप कॉम्प्यूटर हे आणखी एक नाव आहे?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 1
+      },
+	  {
+	  question: "ऍनालॉगपासून डिजिटलमध्ये रुपांतर करण्याच्या प्रक्रियेला डिमॉड्युलेशन हे नाव आहे?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 0
+      },
+	  {
+	  question: "हा____व्हॉईस ग्रेड व लो बँडविड्थ म्हणून ओळखला जाणारा असून स्टैंडर्ड टेलिफोन कम्युनिकेशनसाठी वापरला जातो?",
+        options: [
+          { type: "text", content: "व्हॉईस बँड" },
+          { type: "text", content: "व्हॉईस रेकॉर्ड" },
+          { type: "text", content: "व्हॉल्युम बँड" },
+          { type: "text", content: "ह्यापैकी कोणतेच नाही" }
+        ],
+        answer: 0
+      },
+	  {
+	  question: "रॅम मध्ये साठविलेला डेटा हा",
+        options: [
+          { type: "text", content: "नॉन व्होलेटाईल असतो" },
+          { type: "text", content: "केवळ पॉवर चालु असतानाच तिथे असतो" },
+          { type: "text", content: "पॉवर बंद केल्यावर काही मिनिटांसाठी राहतो" },
+          { type: "text", content: "स्थायी है व पावर बंद हो जाने पर समाप्त हो जाता है" }
+        ],
+        answer: 1
+      },
+	  {
+	  question: "युटिलिटींना सर्व्हिस प्रोग्राम्स असेही म्हणतात?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 0
+      },
+	  {
+	  question: "ह्या नेटवर्कमध्ये सर्व साधने (डिव्हाइसेस) हब नावाच्या उपकरणाला जोडलेली असतात आणि त्याच्याद्वारेच कम्युनिकेट केले जाते?",
+        options: [
+          { type: "text", content: "बस" },
+          { type: "text", content: "स्टार" },
+          { type: "text", content: "रिंग" },
+          { type: "text", content: "मेश" }
+        ],
+        answer: 1
+      },
+	  {
+	  question: "हा सिस्टीमच्या सर्व भागांना / काँपोनंट्सना जोडतो इनपुट व आऊटपुट डिव्हायसेसना सिस्टीम युनिटशी कम्युनिकेट करणे शक्य करतो?",
+        options: [
+          { type: "text", content: "सिस्टीम बोर्ड" },
+          { type: "text", content: "मॉनिटर" },
+          { type: "text", content: "माऊस" },
+          { type: "text", content: "ह्यापैकी कोणतेच नाही" }
+        ],
+        answer: 0
+      },
+	  {
+	  question: "इनपुट डिव्हायसेस, लोकांना समजते ते, कॉम्प्युटर प्रक्रिया करू शकेल अशा स्वरुपात भाषांतरित करतात?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 0
+      },
+	  {
+	  question: "मूळ फाईल्स खराब झाल्यास अथवा हरवल्यास वापरता येऊ शकणा-या त्याच फाईल्स चा दुसरा संच म्हणजे 'बॅकअप प्रोग्रॅम' होय.?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 0
+      },
+	   {
+        question: "कंप्यूटरला कसे काम करायचे या साठी ..... यामध्ये पायरीपायरीने सूचना दिलेल्या असतात.?",
+        options: [
+          { type: "text", content: "प्रोग्रॅम" },
+          { type: "text", content: "हार्डवेअर" },
+          { type: "text", content: "डेटा" },
+          { type: "text", content: "ऑब्जेक्टस्" }
+        ],
+        answer: 0
+      },
+	  {
+        question: "एंड युजर सॉफ्टवेअर म्हणून वर्णन करता येईल असा सॉफ्टवेअरचा प्रकार?",
+        options: [
+          { type: "text", content: "डॉस" },
+          { type: "text", content: "सिस्टिम सॉफ्टवेअर" },
+          { type: "text", content: "ऍप्लिकेशन सॉफ्टवेअर" },
+          { type: "text", content: "ऑपरेशन सॉफ्टवेअर" }
+        ],
+        answer: 2
+      },
+	  {
+        question: "विंडोज ऑपरेटिंग सिस्टीममध्ये स्क्रीनवरील कोणत्याही भागात ऍक्सेस मिळविण्यास सर्वात सोपा मार्ग म्हणजे चा वापर करणे?",
+        options: [
+          { type: "text", content: "कीबोर्ड" },
+          { type: "text", content: "रॅट" },
+          { type: "text", content: "माउस" },
+          { type: "text", content: "जॉयस्टिक" }
+        ],
+        answer: 2
+      },
+	  {
+        question: "पुढीलपैकी कोणते उपकरण हे एक पॉईंटिंग टाईप डिव्हाइस नाही?",
+        options: [
+          { type: "text", content: "माउस" },
+          { type: "text", content: "टच स्क्रीन" },
+          { type: "text", content: "कीबोर्ड" },
+          { type: "text", content: "जॉयस्टिक" }
+        ],
+        answer: 2
+      },
+	  {
+	  question: "प्रिंटर मधून प्रिंट केलेला एखाद्या चित्राच्या आऊटपूटला त्याची हार्ड कॉपी असे म्हणता येत नाही?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 1
+      },
+	  {
+	  question: "अँटी व्हायरस प्रोग्राम्स हे व्हायरस प्रोग्राम्सच्या आक्रमणापासून कॉम्प्यूटरचा बचाव करण्यासाठी वापरले जात नाही?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 1
+      },
+	  {
+        question: "इंटरनेटमधील www हे कशाचे संक्षिप्त रुप आहे?",
+        options: [
+          { type: "text", content: "वर्ल्ड वाईड वेब" },
+          { type: "text", content: "वाईड वाईड वेब" },
+          { type: "text", content: "वर्ल्ड विड्थ वेब" },
+          { type: "text", content: "वर्ल्ड विथ वेब" }
+        ],
+        answer: 0
+      },
+	  {
+        question: "..हे डेटा व प्रोग्राम्स स्टोअर करण्यासाठी वापरतात?",
+        options: [
+          { type: "text", content: "फोल्डर" },
+          { type: "text", content: "फाईल" },
+          { type: "text", content: "रिसायकल बिन" },
+          { type: "text", content: "ह्यापैकी कोणतेच नाही" }
+        ],
+        answer: 1
+      },
+	  {
+	  question: "८००X ६०० रिझोल्युशन असलेल्या मॉनिटर मध्ये आडवी ८०० पिक्सल्स व ऊभी ६०० पिक्सेल्स असतात?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 0
+      },
+	  {
+	  question: "मेन फ्रेम हा मिनी सिस्टिम पेक्षा अधिक शक्तिशाली असा कॉम्प्यूटर सिस्टिमचा प्रकार आहे?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 0
+      },
+	  {
+        question: "आयएसपी चे संपूर्ण स्वरुप............आहे ?",
+        options: [
+          { type: "text", content: "इंटर्नल सर्व्हिस प्लान" },
+          { type: "text", content: "इंटरनेट सर्व्हिस प्लान" },
+          { type: "text", content: "इंटिग्रल सर्व्हिस प्रोव्हायडर" },
+          { type: "text", content: "इंटरनेट सर्वीस् प्रोवाइडर्" }
+        ],
+        answer: 3
+      },
+	  {
+        question: "ऍनालॉगपासून डिजिटलमध्ये रुपांतर करण्याच्या प्रक्रियेला म्हणतात ?",
+        options: [
+          { type: "text", content: "मॉड्युलेशन" },
+          { type: "text", content: "डिमॉड्युलेशन" },
+          { type: "text", content: "कनव्हर्शन" },
+          { type: "text", content: "ह्यापैकी कोणतेच नाही." }
+        ],
+        answer: 1
+      },
+	  {
+	  question: "कॉम्प्युटरची पॉवर बंद केल्यावरही फ्लॅश रॅम मध्ये साठविलेला डेटा इरेज होत नाही.?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 0
+      },
+	  {
+	  question: "मायक्रोकॉम्प्युटर सिस्टीम मध्ये, सेंट्रल प्रोसेसिंग युनिट (सीपीयू) हे मायक्रोप्रोसेसर नावाच्या एकाच चिपमध्ये असते?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 0
+      },
+	  {
+        question: "माऊस व ट्रॅकबॉल ह्यांची कार्ये वेगवेगळी आहेत?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक " },
+        ],
+        answer: 1
+      },
+	  {
+        question: "कंप्यूटरला कसे काम करायचे या साठी ..... यामध्ये पायरीपायरीने सूचना दिलेल्या असतात.?",
+        options: [
+          { type: "text", content: "प्रोग्रॅम" },
+          { type: "text", content: "हार्डवेअर" },
+          { type: "text", content: "डेटा" },
+          { type: "text", content: "ऑब्जेक्टस्" }
+        ],
+        answer: 0
+      },
+      {
+        question: "डब्ल्यु ए एन (वॅन) म्हणजे ?",
+        options: [
+          { type: "text", content: "वायर एरिया नेटवर्क" },
+          { type: "text", content: "वायरलेस एरिया नेटवर्क " },
+          { type: "text", content: "वायर आर्ट नेटवर्क" },
+          { type: "text", content: "वाईड एरिया नेटवर्क" }
+        ],
+        answer: 3
+      },
+	  {
+        question: "इंन्संट मेसेजिंगमुळे पुढील गोष्ट करता येते?",
+        options: [
+          { type: "text", content: "ई-मेल मेसेज पाठविणे" },
+          { type: "text", content: "तुमच्या मेसेजेसचे ताबोडतोब उत्तर मिळणे" },
+          { type: "text", content: "रियल टाईम मध्ये आढळणाऱ्या संभाषणात एकाच वेळी अनेकांशी दळणवळण/कम्युनिकेट करता येणे" },
+          { type: "text", content: "डेटा शेअर करणे" }
+        ],
+        answer: 2
+      },
+      {
+        question: "हार्ड डिस्क पॅक्स ही रिमुव्हेबल स्टोअरेज उपकरणे असून त्यांचा उपयोग प्रचंड माहिती साठविण्यासाठी केला जातो.?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक " },
+        ],
+        answer: 0
+      },
+	  {
+        question: "डिव्हाइस ड्रायव्हर्स हे विशेष (स्पेशलाईज्ड) प्रोग्राम्स असून ते विशिष्ट अन इनपुट किंवा आउटपुट उपकरणाला उरलेल्या कॉम्प्यूटर सिस्टिम्सशी कम्युनिकेट करण्यास मदत करतात?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक " },
+        ],
+        answer: 0
+      },
+	  {
+	  question: "ऍनालॉगपासून डिजिटलमध्ये रुपांतर करण्याच्या प्रक्रियेला डिमॉड्युलेशन हे नाव आहे?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 0
+      },
+	  {
+        question: "फेव्हरेट लिस्ट मध्ये हव्या असलेल्या बाईटचा समावेश करण्यासाठी?",
+        options: [
+          { type: "text", content: "फेव्हरेट.... Add to Favorites पर क्लिक करा" },
+          { type: "text", content: "add ... फेव्हरेट क्लिक करा" },
+          { type: "text", content: "फाईल - फेव्हरेट क्लिक करा" },
+          { type: "text", content: "यापैकी सर्व." }
+        ],
+        answer: 0
+      },
+	  {
+        question: "रँडम ऍक्सेस मेमरी (रॅम) ही.....प्रकारची मेमरी आह?",
+        options: [
+          { type: "text", content: "परमनंट (कायमस्वरुपी)" },
+          { type: "text", content: "तात्पुरती" },
+          { type: "text", content: "फ्लॅश" },
+          { type: "text", content: "स्मार्ट" }
+        ],
+        answer: 1
+      },
+	  {
+	  question: "टच् सरफेस हे एक पॉईंटिंग उपकरण नाही.?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 1
+      },
+	  {
+	  question: "प्रत्येक ट्रॅक हा सेक्टर्स नावाच्या गोलाकार (पादरीच्या) आकाराच्या तुकड्यांमध्ये विभागलेला असत?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक" },
+        ],
+        answer: 0
+      },
+      {
+        question: "एखादे लक्षण चालू / बंद (ऑन अँड ऑफ) करणाऱ्या कॅप्स लॉक सारख्या कीज् ना म्हटले जाते?",
+        options: [
+          { type: "text", content: "फंक्शन कीज्" },
+          { type: "text", content: "काँबिनेशन कीज्" },
+          { type: "text", content: "टॉगल कीज्" },
+          { type: "text", content: "स्पेशलपरपज कीज्" }
+        ],
+        answer: 2
+      },
+	  {
+        question: "ही ऑपरेटिंग सिस्टिमची एका वेळेला एकापेक्षा अधिक ऍप्लिकेशन्स चालविण्याची ऑपरेटिंग सिस्टिमची क्षमता आहे?",
+        options: [
+          { type: "text", content: "बूटिंग" },
+          { type: "text", content: "कॉपिंग" },
+          { type: "text", content: "पेस्टिंग" },
+          { type: "text", content: "मल्टिटास्किंग" }
+        ],
+        answer: 3
+      },
+	  {
+        question: "____कडून कम्युनिकेशन्स व कॉम्प्यूटर सिस्टिम बदलण्याची अपेक्षा असते?",
+        options: [
+          { type: "text", content: "इंटरनेट" },
+          { type: "text", content: "नेटवर्क" },
+          { type: "text", content: "वायरलेस क्रांती" },
+          { type: "text", content: "वरीलपैकी एकही नाही" }
+        ],
+        answer: 2
+      },
+	  {
+        question: "____हे सर्वसामान्यपणे वापरली जाणारी ऍप्लिकेशन्स दर्शविणारे ग्राफिकल ऑब्जेक्टस आहेत?",
+        options: [
+          { type: "text", content: "जीयुआय" },
+          { type: "text", content: "ड्रायव्हर्स" },
+          { type: "text", content: "विंडोज एनटी" },
+          { type: "text", content: "आयकॉन्स" }
+        ],
+        answer: 3
+      },
+	  {
+	  question: "कॉम्प्यूटर सुरु किंवा पुनः सुरु करण्याला सिस्टिमचे ....... करणे म्हणतात.?",
+        options: [
+          { type: "text", content: "बूटिंग" },
+          { type: "text", content: "कॉपिंग" },
+          { type: "text", content: "पेस्टिंग" },
+          { type: "text", content: "मल्टिटास्किंग" }
+        ],
+        answer: 0
+      },
+	  {
+        question: "मॉनिटरच्या स्क्रीनवरील एखाद्या प्रतिमेच्या आऊटपुटला नेहमी हार्डकॉपी म्हटले जाते.?",
+        options: [
+          { type: "text", content: "बरोबर" },
+          { type: "text", content: "चूक " },
+        ],
+        answer: 1
+      }
+    ];
+
+    const quizContainer = document.getElementById("quiz");
+    questions.forEach((q, idx) => {
+      const qDiv = document.createElement("div");
+      qDiv.classList.add("question");
+      qDiv.innerHTML = `<label><b>Q${idx + 1}. ${q.question}</b></label>`;
+      q.options.forEach((opt, i) => {
+        const html = opt.type === "text"
+          ? `<label><input type="radio" name="q${idx}" value="${i}" required> ${opt.content}</label>`
+          : `<label><input type="radio" name="q${idx}" value="${i}" required> <img src="${opt.content}" class="zoom-img"></label>`;
+        const optDiv = document.createElement("div");
+        optDiv.classList.add("options");
+        optDiv.innerHTML = html;
+        qDiv.appendChild(optDiv);
+      });
+      quizContainer.appendChild(qDiv);
+    });
+
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      let score = 0;
+      let resultHTML = "<h3>तुमचा निकाल:</h3>";
+      let emailText = "";
+      const name = document.getElementById("studentName").value;
+      const em = document.getElementById("studentEmail").value;
+      const now = new Date();
+      const ds = now.toISOString().slice(0, 10);
+      const ts = now.toTimeString().split(" ")[0].replace(/:/g, "-");
+      emailText += `नाव: ${name}\nEmail: ${em}\nDate: ${ds} ${ts}\n\n`;
+      questions.forEach((q, i) => {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        if (sel && sel.value == q.answer) {
+          score++;
+          resultHTML += `<p>Q${i + 1}: ✅ बरोबर</p>`;
+          emailText += `Q${i + 1}: बरोबर\n`;
+        } else {
+          resultHTML += `<p>Q${i + 1}: ❌ चुकलं<br>योग्य उत्तर: ${q.options[q.answer].content}</p>`;
+          emailText += `Q${i + 1}: चुकलं — योग्य उत्तर: ${q.options[q.answer].content}\n`;
+        }
+      });
+      resultHTML += `<h4>एकूण गुण: ${score}/${questions.length}</h4>`;
+      emailText += `एकूण गुण: ${score}/${questions.length}`;
+      document.getElementById("result").innerHTML = resultHTML;
+      document.getElementById("result").style.display = "block";
+      emailjs.send("service_ogfodds", "template_udcb6fk", {
+        from_name: name,
+        from_email: em,
+        to_email: em,
+        subject: `Result - ${name}`,
+        message: emailText
+      })
+      .then(() => alert("🎉 निकाल ईमेलवर पाठवला गेला आहे! 🙌मळगंगा कॉम्प्युटरने घेतलेल्या या सराव परीक्षेमध्ये सक्रिय सहभाग घेतल्याबद्दल तुमचे मनःपूर्वक आभार. 🙏✨ तुमच्या उज्ज्वल भविष्यासाठी हार्दिक शुभेच्छा! 🌟!"))
+      .catch(err => alert("Email पाठवताना त्रुटी आली"));
+    });
+  </script>
+</body>
+</html>
