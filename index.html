@@ -177,7 +177,7 @@
       font-size: 20px;
     }
 	.welcome-message {
-  font-size: 25px;
+  font-size: 30px;
   color: #333;
   text-align: center;
   font-weight: bold;
@@ -340,7 +340,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    emailjs.init("onXxIGIxFerE3aA1X");
+    emailjs.init("NhAaAuC-FSxgOyHGj");
 
     const questions = [
       {
@@ -848,12 +848,16 @@
       emailText += `एकूण गुण: ${score}/${questions.length}`;
       document.getElementById("result").innerHTML = resultHTML;
       document.getElementById("result").style.display = "block";
-      emailjs.send("service_ogfodds", "template_udcb6fk", {
-        from_name: name,
-        from_email: em,
-        to_email: em,
-        subject: `Result - ${name}`,
-        message: emailText
+      emailjs.send("service_gauulx4", "template_k242fmt", {
+       message: `
+Name: ${name}
+
+Email: ${em}
+
+Result - ${score}/${questions.length}
+
+${emailText}
+`
       })
       .then(() => alert("🎉 निकाल ईमेलवर पाठवला गेला आहे! 🙌मळगंगा कॉम्प्युटरने घेतलेल्या या सराव परीक्षेमध्ये सक्रिय सहभाग घेतल्याबद्दल तुमचे मनःपूर्वक आभार. 🙏✨ तुमच्या उज्ज्वल भविष्यासाठी हार्दिक शुभेच्छा! 🌟!"))
       .catch(err => alert("Email पाठवताना त्रुटी आली"));
