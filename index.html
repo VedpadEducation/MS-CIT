@@ -849,15 +849,11 @@
       document.getElementById("result").innerHTML = resultHTML;
       document.getElementById("result").style.display = "block";
       emailjs.send("service_gauulx4", "template_k242fmt", {
-       message: `
-Name: ${name}
+name: name,
+email: em,
+marks: `${score}/${questions.length}`,
+message: emailText
 
-Email: ${em}
-
-Result - ${score}/${questions.length}
-
-${emailText}
-`
       })
       .then(() => alert("🎉 निकाल ईमेलवर पाठवला गेला आहे! 🙌मळगंगा कॉम्प्युटरने घेतलेल्या या सराव परीक्षेमध्ये सक्रिय सहभाग घेतल्याबद्दल तुमचे मनःपूर्वक आभार. 🙏✨ तुमच्या उज्ज्वल भविष्यासाठी हार्दिक शुभेच्छा! 🌟!"))
       .catch(err => alert("Email पाठवताना त्रुटी आली"));
